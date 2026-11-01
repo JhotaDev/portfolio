@@ -170,9 +170,10 @@ main { position: relative; z-index: 1; }
   animation: hint 1.6s ease-in-out infinite;
 }
 @keyframes hint { 50% { transform: translateY(9px); opacity: 0.3; } }
-/* Blocos alinhados à esquerda, na altura do rosto do avatar */
-.hero-left { left: 8%; transform: translate(-30px, -62%); text-align: left; }
-.hero-right { right: 6%; transform: translate(30px, -58%); text-align: left; }
+/* Blocos ancorados no centro da tela, um de cada lado da cabeça do avatar.
+   A cabeça tem largura proporcional à altura da tela (≈ 50vh), por isso o vão usa vh. */
+.hero-left { right: calc(50% + 25vh); transform: translate(-30px, -62%); text-align: left; }
+.hero-right { left: calc(50% + 25vh); transform: translate(30px, -58%); text-align: left; }
 .ready .hero-left { opacity: 1; transform: translate(0, -62%); }
 .ready .hero-right { opacity: 1; transform: translate(0, -58%); }
 
@@ -186,7 +187,7 @@ main { position: relative; z-index: 1; }
   margin-bottom: 0.55rem;
 }
 .greet { font-size: clamp(1.4rem, 2.5vw, 2.6rem); }
-.stack { font-size: clamp(1.3rem, 2.65vw, 2.75rem); }
+.stack { font-size: clamp(1.1rem, 1.9vw, 2.2rem); white-space: nowrap; }
 
 /* Nome: mesmo estilo do cargo (JOÃO maior, MESQUITA logo abaixo, ambos em negrito) */
 .name {
