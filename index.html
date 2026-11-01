@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jhota — Software Engineer</title>
+  <meta name="description" content="Portfólio de João — Software Engineer, data analytics, Python, SQL e AWS." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,500;0,800;1,300;1,500&family=Kalam:wght@400&family=Outfit:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/sections.css" />
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.164.1/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.164.1/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="logo" href="#inicio">JHOTA</a>
+    <!-- O e-mail vem de CONTACT_EMAIL em js/sections.js (preenche todos os [data-email]) -->
+    <a class="mail" data-email href="#"></a>
+    <nav class="nav">
+      <a href="#sobre" data-i18n="nav.about">Sobre</a>
+      <a href="#servicos" data-i18n="nav.what">O que eu faço</a>
+      <a href="#projetos" data-i18n="nav.projects">Projetos</a>
+      <a href="#contato" data-i18n="nav.contact">Contato</a>
+    </nav>
+    <div class="lang" role="group" aria-label="Idioma">
+      <button data-lang="pt" class="active">PT</button>
+      <button data-lang="en">EN</button>
+      <button data-lang="es">ES</button>
+    </div>
+    <button class="theme-toggle" aria-label="Alternar tema claro/escuro">
+      <svg class="moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      <svg class="sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+    </button>
+  </header>
+
+  <!-- Avatar 3D fixo: no hero fica centralizado; no "Sobre" a câmera aproxima e ele vai para a esquerda -->
+  <canvas id="avatar" aria-label="Avatar 3D que acompanha o cursor"></canvas>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-left">
+        <p class="greet" data-i18n="hero.greet">Olá! Eu sou</p>
+        <h1 class="name"><span class="name-first">João</span><span class="name-last">Mesquita</span></h1>
+      </div>
+      <div class="hero-right">
+        <p class="stack">data analytics · python · sql · aws</p>
+        <h2 class="role"><span>SOFTWARE</span><span>ENGINEER</span></h2>
+      </div>
+      <span class="scroll-hint" aria-hidden="true"></span>
+    </section>
+
+    <!-- SOBRE -->
+    <section class="about" id="sobre">
+      <div class="about-sticky">
+        <div class="about-copy">
+          <p class="script-label" data-i18n="about.tag">Sobre mim</p>
+          <p class="about-text" data-words data-i18n-html="about.text"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- O QUE EU FAÇO: avatar na mesa + cards com borda tracejada -->
+    <section class="services" id="servicos">
+      <h2 class="mix-title reveal">
+        <span class="b" data-i18n="services.t1">O</span> <span class="i" data-i18n="services.t2">que</span><br />
+        <span class="b" data-i18n="services.t3">eu</span> <span class="a" data-i18n="services.t4">faço</span>
+      </h2>
+      <div class="desk-stage">
+        <canvas id="desk" aria-label="Avatar 3D trabalhando no computador"></canvas>
+      </div>
+      <div class="svc-list">
+        <article class="svc open">
+          <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+          <button class="svc-head" aria-expanded="true">
+            <h3 data-i18n="svc1.title">DATA &amp; PRODUCT ANALYTICS</h3>
+            <span class="chev" aria-hidden="true"></span>
+          </button>
+          <div class="svc-body"><div>
+            <h4 data-i18n="label.desc">Descrição</h4>
+            <p data-i18n="svc1.desc">Análise exploratória de dados, definição e acompanhamento de métricas de produto (CX/BUPJ), modelagem analítica e criação de relatórios que respondem a perguntas reais de negócio.</p>
+            <h4 data-i18n="label.skills">Skills &amp; ferramentas</h4>
+            <ul class="tags"><li>Python</li><li>SQL</li><li>Pandas</li><li>Power BI</li><li data-i18n="svc1.excel">Excel Avançado</li></ul>
+          </div></div>
+        </article>
+        <article class="svc">
+          <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+          <button class="svc-head" aria-expanded="false">
+            <h3 data-i18n="svc2.title">ENGENHARIA DE DADOS &amp; SOFTWARE</h3>
+            <span class="chev" aria-hidden="true"></span>
+          </button>
+          <div class="svc-body"><div>
+            <h4 data-i18n="label.desc">Descrição</h4>
+            <p data-i18n="svc2.desc">Desenvolvimento de pipelines de extração e tratamento de dados (ETL), integração de APIs, manipulação de bancos de dados relacionais e construção de aplicações escaláveis.</p>
+            <h4 data-i18n="label.skills">Skills &amp; ferramentas</h4>
+            <ul class="tags"><li>Python</li><li>Java</li><li>SQL</li><li>PostgreSQL</li><li>C / C++</li><li>JavaScript</li></ul>
+          </div></div>
+        </article>
+        <article class="svc">
+          <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+          <button class="svc-head" aria-expanded="false">
+            <h3 data-i18n="svc3.title">CLOUD &amp; AUTOMAÇÃO DE PROCESSOS</h3>
+            <span class="chev" aria-hidden="true"></span>
+          </button>
+          <div class="svc-body"><div>
+            <h4 data-i18n="label.desc">Descrição</h4>
+            <p data-i18n="svc3.desc">Arquitetura e consulta de dados em nuvem combinadas com automação de rotinas operacionais e corporativas, reduzindo trabalho manual e aumentando a confiabilidade dos dados.</p>
+            <h4 data-i18n="label.skills">Skills &amp; ferramentas</h4>
+            <ul class="tags"><li>AWS (S3, Glue, Athena)</li><li>Power Automate</li><li>VBA</li><li>Git</li><li>GitHub</li><li>Linux</li></ul>
+          </div></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- CARREIRA -->
+    <section class="career" id="carreira">
+      <h2 class="center-title reveal">
+        <span data-i18n="career.t1">Minha carreira</span> <em>&amp;</em><br /><span data-i18n="career.t2">experiência</span>
+      </h2>
+      <div class="timeline">
+        <span class="timeline-line"><span class="timeline-dot"></span></span>
+        <article class="job">
+          <div class="job-role"><h3 data-i18n="job1.role">Estagiário de Análise de Dados e Produtos</h3><p class="job-org"><span class="brand brand-logo"><img src="assets/logos/itau.png" alt="" />Itaú Unibanco</span></p></div>
+          <p class="job-years">2026 –<br /><span data-i18n="years.now">Atual</span></p>
+          <p class="job-desc" data-i18n="job1.desc">Atuação na área de produtos PJ (BUPJ) com foco em Customer Experience. Construção de análises exploratórias, cruzamento de bases via SQL e Python, estruturação de métricas de produto na AWS e automação de relatórios executivos para apoiar decisões estratégicas.</p>
+        </article>
+        <article class="job">
+          <div class="job-role"><h3 data-i18n="job2.role">Google Student Ambassador &amp; Creator</h3><p class="job-org"><span class="brand brand-google"><i class="brand-g" aria-hidden="true"></i>Google</span> <span class="brand brand-logo brand-fiap"><img src="assets/logos/fiap.png" alt="FIAP" />Content Lab</span></p></div>
+          <p class="job-years">2026 –<br /><span data-i18n="years.now">Atual</span></p>
+          <p class="job-desc" data-i18n="job2.desc">Representante estudantil oficial do Google e criador de conteúdo no ecossistema da FIAP. Liderança de iniciativas acadêmicas em tecnologia, inteligência artificial e engenharia de software, conectando a comunidade estudantil às ferramentas do mercado.</p>
+        </article>
+        <article class="job">
+          <div class="job-role"><h3 data-i18n="job3.role">Fundador &amp; Gestor de Operações e Dados</h3><p class="job-org"><span class="brand brand-logo brand-criart"><img src="assets/logos/criart.png" alt="" />CriArt Vieira</span></p></div>
+          <p class="job-years">2025 –<br /><span data-i18n="years.now">Atual</span></p>
+          <p class="job-desc" data-i18n="job3.desc">Criação e gestão completa de e-commerce próprio nos marketplaces Shopee e Mercado Livre. Estruturação de precificação orientada a dados, controle analítico de estoque, automação do fluxo de pedidos e gestão logística e financeira.</p>
+        </article>
+        <article class="job">
+          <div class="job-role"><h3 data-i18n="job4.role">Auxiliar de E-commerce &amp; Automação</h3><p class="job-org">Império do Banho</p></div>
+          <p class="job-years">2025</p>
+          <p class="job-desc" data-i18n="job4.desc">Otimização da operação digital por meio de automações avançadas em Excel e VBA, integração e conciliação de dados no sistema ERP e melhoria contínua no fluxo de processamento de pedidos.</p>
+        </article>
+        <article class="job">
+          <div class="job-role"><h3 data-i18n="job5.role">Jovem Aprendiz Administrativo (CCO)</h3><p class="job-org">Viação Pirajuçara</p></div>
+          <p class="job-years">2024 –<br />2025</p>
+          <p class="job-desc" data-i18n="job5.desc">Atuação no Centro de Controle Operacional monitorando rotas e ocorrências em tempo real. Desenvolvimento de planilhas automatizadas com VBA para consolidação de indicadores operacionais e ganho de agilidade na geração de relatórios.</p>
+        </article>
+      </div>
+
+      <!-- FORMAÇÃO ACADÊMICA -->
+      <h3 class="edu-title reveal" data-i18n="edu.title">Formação acadêmica</h3>
+      <div class="timeline edu">
+        <article class="job active">
+          <div class="job-role"><h3 data-i18n="edu.degree">Bacharelado em Engenharia de Software</h3><p class="job-org"><span class="brand brand-logo brand-fiap"><img src="assets/logos/fiap.png" alt="FIAP" /></span></p></div>
+          <p class="job-years">2026 –<br />2029</p>
+          <div class="job-desc">
+            <p data-i18n-html="edu.gs"></p>
+            <p class="award" data-i18n-html="edu.next"></p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- PROJETOS: carrossel horizontal movido pela rolagem -->
+    <section class="projects" id="projetos">
+      <div class="projects-sticky">
+        <header class="projects-head">
+          <h2><span data-i18n="projects.my">Meus</span> <em data-i18n="projects.title">Projetos</em></h2>
+          <div class="projects-progress">
+            <span class="projects-count"><b data-counter>01</b> / <span data-total>02</span></span>
+            <span class="bar"><span class="bar-fill"></span></span>
+          </div>
+        </header>
+        <div class="projects-track">
+          <!-- Projeto real: StudyCam AI (2º lugar no Challenge FIAP NEXT), publicado na Google Play -->
+          <article class="pcard featured">
+            <a class="pthumb pthumb-media-wrap" href="https://play.google.com/store/apps/details?id=com.studycam" target="_blank" rel="noopener">
+              <video class="pthumb-media" src="assets/projects/studycam.mp4" poster="assets/projects/studycam-poster.jpg" muted loop playsinline preload="none" data-autoplay aria-label="Demonstração do app StudyCam AI"></video>
+              <span class="pthumb-badge">Google Play</span>
+              <span class="pthumb-arrow" aria-hidden="true">↗</span>
+            </a>
+            <p class="pnum">01 · <img class="pnum-logo" src="assets/logos/fiap-next.png" alt="FIAP NEXT" /> <span data-i18n="projects.award">2º lugar no Challenge</span></p>
+            <h3>StudyCam AI</h3>
+            <p class="pcat" data-i18n="p1.cat">App Android · IA generativa</p>
+            <p class="pdesc" data-i18n="p1.desc">App de estudos que transforma fotos do caderno e documentos em resumos com IA, tira dúvidas com um tutor virtual e gera simulados. Suporta mais de 90 idiomas.</p>
+            <h4 data-i18n="label.tech">Tecnologias</h4>
+            <ul class="ptech" data-tech="kotlin gemini firebase"></ul>
+          </article>
+          <!-- Projeto real: OrbitCore (campeão da Global Solution, 1º semestre de Eng. de Software) -->
+          <article class="pcard featured">
+            <a class="pthumb pthumb-media-wrap" href="https://iantassiotto.github.io/Projeto_OrbitCore/" target="_blank" rel="noopener">
+              <img class="pthumb-media orbit" src="assets/projects/orbitcore.jpg" alt="Protótipo da sonda OrbitCore com vela solar" loading="lazy" />
+              <span class="pthumb-badge" data-i18n="projects.prototype">Protótipo</span>
+              <span class="pthumb-arrow" aria-hidden="true">↗</span>
+            </a>
+            <p class="pnum">02 · <span class="trophy" aria-hidden="true">🏆</span> <span data-i18n="projects.gs">Campeão da Global Solution</span></p>
+            <h3>OrbitCore</h3>
+            <p class="pcat" data-i18n="p2.cat">IoT · Ciência de dados · Web</p>
+            <p class="pdesc" data-i18n="p2.desc">Sonda autônoma com vela solar para explorar o sistema TRAPPIST-1: Arduino + RFID identifica cada planeta, uma central em Python calcula a habitabilidade (ESI) e as órbitas (3ª Lei de Kepler), e um site interativo apresenta a missão.</p>
+            <h4 data-i18n="label.tech">Tecnologias</h4>
+            <ul class="ptech" data-tech="arduino rfid python html css javascript"></ul>
+            <div class="plinks">
+              <a href="https://www.youtube.com/watch?v=8CI5FU4M9v0" target="_blank" rel="noopener"><span data-i18n="projects.video">Vídeo</span></a>
+              <a href="https://iantassiotto.github.io/Projeto_OrbitCore/" target="_blank" rel="noopener"><span data-i18n="projects.site">Site</span></a>
+              <a href="https://github.com/FIAP-EngSoft-Jhota/OrbitCore" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- REDES: dois bonecos puxam os blocos do LinkedIn e do TikTok por cordas; tudo guiado pela rolagem -->
+    <section class="duel" id="redes">
+      <div class="duel-sticky">
+        <canvas id="duel" aria-label="Dois avatares puxando os logos do LinkedIn e do TikTok por cordas"></canvas>
+
+        <header class="duel-head">
+          <p class="duel-kicker" data-i18n="duel.kicker">Redes sociais</p>
+          <h2><span class="li">LinkedIn</span> <em>×</em> <span class="tt">TikTok</span></h2>
+          <p class="duel-sub" data-i18n="duel.sub">Meu alcance em cada rede, frente a frente.</p>
+        </header>
+
+        <a class="duel-stat" data-side="li" href="https://www.linkedin.com/in/jhotadev/" target="_blank" rel="noopener">
+          <p class="ds-name">LinkedIn</p>
+          <p class="ds-period" data-i18n="duel.liPeriod">em 2026</p>
+          <p class="ds-num"><b data-count="38180">0</b></p>
+          <p class="ds-metric" data-i18n="duel.liMetric">impressões</p>
+        </a>
+        <a class="duel-stat" data-side="tt" href="https://www.tiktok.com/@jhotadev" target="_blank" rel="noopener">
+          <p class="ds-name">TikTok</p>
+          <p class="ds-period" data-i18n="duel.ttPeriod">últimos 90 dias</p>
+          <p class="ds-num"><b data-count="912500">0</b></p>
+          <p class="ds-metric" data-i18n="duel.ttMetric">visualizações</p>
+        </a>
+
+        <p class="duel-note" data-i18n="duel.note">LinkedIn: impressões em 2026 · TikTok (@jhotadev): visualizações nos últimos 90 dias.</p>
+      </div>
+    </section>
+
+    <!-- TECNOLOGIAS: ícones em círculos que ganham cor no hover, agrupados -->
+    <section class="stack-section" id="tecnologias">
+      <h2 class="center-title upper reveal" data-i18n="stack.title">Minhas Tecnologias</h2>
+      <p class="script-label center reveal" data-i18n="stack.sub">Stack &amp; ferramentas</p>
+      <div class="tech-groups">
+        <div class="tech-group">
+          <h3 data-i18n="stack.g1">Linguagens &amp; Dados</h3>
+          <ul class="tech-grid" data-tech="python sql java c cpp javascript vba"></ul>
+        </div>
+        <div class="tech-group">
+          <h3 data-i18n="stack.g2">Bancos &amp; Cloud</h3>
+          <ul class="tech-grid" data-tech="aws gcloud postgresql mysql sqlite"></ul>
+        </div>
+        <div class="tech-group">
+          <h3 data-i18n="stack.g3">Análise &amp; BI</h3>
+          <ul class="tech-grid" data-tech="pandas numpy sklearn powerbi excel"></ul>
+        </div>
+        <div class="tech-group">
+          <h3 data-i18n="stack.g4">Dev &amp; Automação</h3>
+          <ul class="tech-grid" data-tech="powerautomate git github vscode postman linux"></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section class="contact" id="contato">
+      <h2 class="contact-title reveal" data-i18n="contact.title">Contato</h2>
+      <div class="contact-grid reveal">
+        <div class="contact-col">
+          <h4>Email</h4>
+          <a class="contact-value" data-email href="#"></a>
+          <h4 data-i18n="contact.location">Localização</h4>
+          <p class="contact-value" data-i18n="contact.city">São Paulo, Brasil</p>
+        </div>
+        <div class="contact-col">
+          <h4>Social</h4>
+          <a class="arrow-link" href="https://github.com/jhotadev" target="_blank" rel="noopener">GitHub</a>
+          <a class="arrow-link" href="https://www.linkedin.com/in/jhotadev/" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="arrow-link" href="https://www.tiktok.com/@jhotadev" target="_blank" rel="noopener">TikTok</a>
+          <a class="arrow-link" href="https://www.instagram.com/jhotadev/" target="_blank" rel="noopener">Instagram</a>
+        </div>
+        <div class="contact-col signature">
+          <p class="sig-by" data-i18n="footer.by">Desenvolvido por</p>
+          <p class="sig-name">João</p>
+          <p class="copy">© 2026</p>
+        </div>
+      </div>
+      <!-- Crédito exigido pela licença CC BY 4.0 do modelo 3D: discreto, abre ao clicar -->
+      <details class="credit">
+        <summary data-i18n="footer.credits">Créditos</summary>
+        <p>
+          <span data-i18n="footer.model">Modelo 3D</span>:
+          <a href="https://sketchfab.com/3d-models/boneco-2dd8e66fe41f4a5090a35cdb320b89bf" target="_blank" rel="noopener">“BONECO”</a>
+          <span data-i18n="footer.byAuthor">por</span>
+          <a href="https://sketchfab.com/dapenha" target="_blank" rel="noopener">DAPENHA</a>
+          (<a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>),
+          <span data-i18n="footer.modified">modificado</span>
+        </p>
+      </details>
+    </section>
+  </main>
+
+  <aside class="socials">
+    <a href="https://github.com/jhotadev" target="_blank" rel="noopener" aria-label="GitHub">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
+    </a>
+    <a href="https://www.linkedin.com/in/jhotadev/" target="_blank" rel="noopener" aria-label="LinkedIn">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4v11H3zM9.5 9.75h3.8v1.5h.06c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.77 2.65 4.77 6.1v5.45h-4v-4.83c0-1.15-.02-2.63-1.6-2.63-1.6 0-1.85 1.25-1.85 2.55v4.91h-4z"/></svg>
+    </a>
+    <a href="https://www.tiktok.com/@jhotadev" target="_blank" rel="noopener" aria-label="TikTok">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v11.5a3.5 3.5 0 1 1-3.5-3.5"/><path d="M14 3c.4 2.6 2.2 4.4 5 4.6"/></svg>
+    </a>
+    <a href="https://www.instagram.com/jhotadev/" target="_blank" rel="noopener" aria-label="Instagram">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="0.6" fill="currentColor"/></svg>
+    </a>
+  </aside>
+
+  <!-- Cortina da troca de idioma -->
+  <div class="lang-curtain" aria-hidden="true"><span></span></div>
+
+  <script type="module" src="js/main.js"></script>
+  <script type="module" src="js/sections.js"></script>
+</body>
+</html>
